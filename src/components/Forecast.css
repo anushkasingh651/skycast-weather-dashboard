@@ -1,0 +1,187 @@
+/* =========================================================
+   FORECAST
+   ========================================================= */
+
+.forecast-section {
+  margin-top: 30px;
+}
+
+
+/* Title */
+
+.forecast-title p {
+  margin:
+    0 0 5px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.forecast-title h2 {
+  margin:
+    0 0 16px;
+
+  font-size: 24px;
+
+  letter-spacing: -0.8px;
+}
+
+
+/* Grid */
+
+.forecast-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+
+/* Card */
+
+.forecast-card {
+  padding: 22px;
+
+  background: white;
+
+  border:
+    1px solid
+    #eaecf0;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px
+    rgba(16, 24, 40, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.forecast-card:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 15px 35px
+    rgba(16, 24, 40, 0.08);
+}
+
+
+/* Date */
+
+.forecast-date {
+  margin: 0;
+
+  color: #344054;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* Weather icon */
+
+.forecast-card img {
+  width: 65px;
+  height: 65px;
+
+  margin:
+    12px 0;
+
+  object-fit: contain;
+}
+
+
+/* Temperature */
+
+.forecast-card h3 {
+  margin: 0;
+
+  font-size: 25px;
+
+  color: #101828;
+}
+
+.forecast-card h3 span {
+  margin-left: 7px;
+
+  color: #98a2b3;
+
+  font-size: 17px;
+
+  font-weight: 500;
+}
+
+
+/* Condition */
+
+.forecast-condition {
+  margin:
+    7px 0;
+
+  min-height: 32px;
+
+  color: #667085;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* Rain */
+
+.rain-chance {
+  margin-top: 12px;
+
+  padding: 8px;
+
+  border-radius: 10px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .forecast-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+  .forecast-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-card {
+    padding: 20px;
+  }
+}

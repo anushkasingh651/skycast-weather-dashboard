@@ -1,0 +1,27 @@
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  padding:
+    45px 20px;
+
+  text-align: center;
+
+  color: #98a2b3;
+
+  font-size: 13px;
+}
+
+.footer p {
+  margin:
+    0 0 6px;
+
+  color: #667085;
+
+  font-weight: 700;
+}
+
+.footer span {
+  font-size: 12px;
+}

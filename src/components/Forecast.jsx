@@ -5,25 +5,26 @@ export default function Forecast({ weather }) {
     return null;
   }
 
-  const days = weather.forecast.forecastday;
+  const days =
+    weather.forecast.forecastday;
 
   return (
     <div className="forecast-section">
-
       <div className="forecast-title">
         <p>UPCOMING WEATHER</p>
         <h2>3-day forecast</h2>
       </div>
 
       <div className="forecast-grid">
-
         {days.map((day) => (
           <div
             className="forecast-card"
             key={day.date}
           >
             <p className="forecast-date">
-              {new Date(day.date).toLocaleDateString(
+              {new Date(
+                `${day.date}T12:00:00`
+              ).toLocaleDateString(
                 "en-US",
                 {
                   weekday: "short",
@@ -33,15 +34,20 @@ export default function Forecast({ weather }) {
               )}
             </p>
 
-            <img
-              src={`https:${day.day.condition.icon}`}
-              alt={day.day.condition.text}
-            />
+            <div className="forecast-icon">
+              {day.day.condition.icon}
+            </div>
 
             <h3>
-              {Math.round(day.day.maxtemp_c)}°
+              {Math.round(
+                day.day.maxtemp_c
+              )}
+              °
               <span>
-                {Math.round(day.day.mintemp_c)}°
+                {Math.round(
+                  day.day.mintemp_c
+                )}
+                °
               </span>
             </h3>
 
@@ -50,13 +56,14 @@ export default function Forecast({ weather }) {
             </p>
 
             <div className="rain-chance">
-              💧 {day.day.daily_chance_of_rain}%
+              💧{" "}
+              {day.day
+                .daily_chance_of_rain}
+              %
             </div>
           </div>
         ))}
-
       </div>
-
     </div>
   );
 }

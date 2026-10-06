@@ -5,7 +5,8 @@ import "./WeatherCard.css";
 export default function WeatherCard({
   weather,
 }) {
-  const [unit, setUnit] = useState("C");
+  const [unit, setUnit] =
+    useState("C");
 
   if (!weather) {
     return null;
@@ -23,23 +24,22 @@ export default function WeatherCard({
 
   const feelsLike =
     unit === "C"
-      ? Math.round(current.feelslike_c)
-      : Math.round(current.feelslike_f);
+      ? Math.round(
+          current.feelslike_c
+        )
+      : Math.round(
+          current.feelslike_f
+        );
 
   return (
     <div className="main-weather-card">
-
       <div className="weather-card-top">
-
         <div className="weather-location">
-
           <p className="weather-label">
             CURRENT WEATHER
           </p>
 
-          <h2>
-            {location.name}
-          </h2>
+          <h2>{location.name}</h2>
 
           <span>
             {location.region
@@ -47,7 +47,6 @@ export default function WeatherCard({
               : ""}
             {location.country}
           </span>
-
         </div>
 
         <button
@@ -56,27 +55,18 @@ export default function WeatherCard({
         >
           ☆
         </button>
-
       </div>
 
-
       <div className="weather-main">
-
-        <img
-          src={`https:${current.condition.icon}`}
-          alt={current.condition.text}
-        />
+        <div className="current-weather-icon">
+          {current.condition.icon}
+        </div>
 
         <div>
-
           <div className="temperature-row">
-
-            <h1>
-              {temperature}°
-            </h1>
+            <h1>{temperature}°</h1>
 
             <div className="unit-toggle">
-
               <button
                 className={
                   unit === "C"
@@ -102,9 +92,7 @@ export default function WeatherCard({
               >
                 °F
               </button>
-
             </div>
-
           </div>
 
           <h3>
@@ -112,20 +100,16 @@ export default function WeatherCard({
           </h3>
 
           <p>
-            Feels like {feelsLike}°
-            {unit}
+            Feels like{" "}
+            {feelsLike}°{unit}
           </p>
-
         </div>
-
       </div>
-
 
       <div className="updated-time">
         Last updated:{" "}
         {current.last_updated}
       </div>
-
     </div>
   );
 }
